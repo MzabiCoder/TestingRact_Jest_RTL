@@ -1,15 +1,17 @@
 import { render, screen } from "@testing-library/react"
-import { Greed } from "./greed"
+import { Greed } from "./Greed"
 
 
-test('greed redners correctly', () => {
-    render(<Greed />);
-    const testElemnt = screen.getByText('Hello');
-    expect(testElemnt).toBeInTheDocument()
-});
+describe('Greed', () => {
+    test('redners correctly', () => {
+        render(<Greed />);
+        const testElemnt = screen.getByText('Hello');
+        expect(testElemnt).toBeInTheDocument()
+    });
 
-test('Greetd renders with a name', () => {
-    render(<Greed name="Nabil" />);
-    const textElement = screen.getByText('Hello Nabil');
-    expect(textElement).toBeInTheDocument()
+    test('Grenders with a name', () => {
+        render(<Greed name="Nabil" />);
+        const textElement = screen.getByText('Hello Nabil');
+        expect(textElement).toBeInTheDocument()
+    })
 })
